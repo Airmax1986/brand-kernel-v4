@@ -1,23 +1,19 @@
-import Navigation from "./components/sections/Navigation"
-import Hero from "./components/sections/Hero"
-import Problem from "./components/sections/Problem"
-import Solution from "./components/sections/Solution"
-import Pricing from "./components/sections/Pricing"
-import Waitlist from "./components/sections/Waitlist"
-import Founder from "./components/sections/Founder"
-import Footer from "./components/sections/Footer"
+import { Navigation } from "./components/sections/Navigation"
+import { HeroSection } from "./components/sections/HeroSection"
+import { ProblemSection } from "./components/sections/ProblemSection"
+import { SolutionSection } from "./components/sections/SolutionSection"
+import { ChoosePlanSection } from "./components/sections/ChoosePlanSection"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background">
       <Navigation />
-      <Hero />
-      <Problem />
-      <Solution />
-      <Pricing />
-      <Waitlist />
-      <Founder />
-      <Footer />
+      <div className="pt-16"> {/* Account for fixed navigation */}
+        <HeroSection />
+        <ProblemSection />
+        <SolutionSection />
+        <ChoosePlanSection />
+      </div>
     </main>
   )
 }
