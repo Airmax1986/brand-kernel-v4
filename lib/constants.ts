@@ -177,7 +177,7 @@ export const FOOTER_LINKS = {
 } as const
 
 // Legacy constants for backward compatibility
-import type { BrandColor, NavLink, SocialLink, FooterLinkGroup } from "@/types"
+import type { BrandColor, NavLink, SocialLink } from "@/types"
 
 // Brand Colors
 export const BRAND_COLORS: Record<BrandColor, string> = {
