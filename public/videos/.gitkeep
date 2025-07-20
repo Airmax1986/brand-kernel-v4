@@ -1,0 +1,14 @@
+# Videos Directory
+
+This directory should contain:
+- spark-icon.mp4 (Hero section animated icon for Brand Kernel v4)
+- text-reasoning.mp4 (Feature card video)
+- multimodal.mp4 (Feature card video)
+- code.mp4 (Feature card video)
+
+Video requirements:
+- Format: MP4
+- Optimized for web
+- Autoplay compatible (muted)
+- Recommended size: max 2MB per video
+- Brand Kernel v4 themed content

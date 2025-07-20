@@ -1,0 +1,15 @@
+# Icons Directory
+
+This directory should contain:
+- consumer.svg (Brand Kernel v4 consumer icon)
+- business.svg (Brand Kernel v4 business icon)
+- enterprise.svg (Brand Kernel v4 enterprise icon)
+- education.svg (Brand Kernel v4 education icon)
+- Various UI icons as needed
+
+Icon requirements:
+- Format: SVG
+- Optimized and cleaned
+- Proper viewBox settings
+- Consistent Brand Kernel v4 styling
+- Accessible design

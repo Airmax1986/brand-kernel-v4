@@ -1,0 +1,14 @@
+# Images Directory
+
+This directory should contain:
+- advanced-reasoning.jpg (Feature card image for Brand Kernel v4)
+- og-image.jpg (Social media preview with Brand Kernel v4 branding)
+- favicon-16x16.png (Brand Kernel v4 favicon)
+- favicon-32x32.png (Brand Kernel v4 favicon)
+- apple-touch-icon.png (Brand Kernel v4 touch icon)
+
+Image requirements:
+- Optimized for web (WebP preferred)
+- Proper dimensions for each use case
+- Brand Kernel v4 themed design
+- Alt text considered in implementation
