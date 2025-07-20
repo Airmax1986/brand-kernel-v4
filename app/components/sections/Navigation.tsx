@@ -1,113 +1,88 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Link from "next/link"
-import { cn } from "@/lib/utils"
-import GeometricLogo from "@/components/brand/GeometricLogo"
-import Button from "@/components/ui/Button"
-import { NAV_LINKS } from "@/lib/constants"
+import { motion } from "framer-motion"
+import { Container, Button } from "@/components/ui"
+import GeometricBlock from "@/components/brand/GeometricBlock"
 
-const Navigation = () => {
+export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
+      setIsScrolled(window.scrollY > 20)
     }
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const navItems = [
+    { label: "The Approach", href: "#approach" },
+    { label: "The Product", href: "#product" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "About", href: "#about" },
+  ]
+
   return (
-    <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-      isScrolled ? "bg-white/95 backdrop-blur-sm border-b border-border-light shadow-subtle" : "bg-transparent"
-    )}>
-      <div className="max-w-container mx-auto px-container">
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/95 backdrop-blur-md border-b border-border-light shadow-subtle"
+          : "bg-transparent"
+      }`}
+    >
+      <Container>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-            <GeometricLogo size="md" animated={false} />
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="flex items-center gap-3 cursor-pointer"
+          >
+            {/* Brand Kernel Logo */}
+            <div className="flex items-center gap-1 p-2 bg-white rounded-geometric border border-border-light shadow-subtle">
+              <GeometricBlock color="purple" size="sm" />
+              <GeometricBlock color="teal" size="sm" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-body font-bold text-text-primary">BrandKernel</span>
+              <span className="text-caption text-text-tertiary leading-none">.io</span>
+            </div>
+          </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-text-secondary hover:text-text-primary transition-colors duration-200 relative group"
+          <div className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <motion.a
+                key={item.label}
+                href={item.href}
+                className="text-body text-text-secondary hover:text-text-primary transition-colors relative group"
+                whileHover={{ y: -1 }}
               >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue transition-all duration-200 group-hover:w-full" />
-              </Link>
+                {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-blue transition-all duration-200 group-hover:w-full" />
+              </motion.a>
             ))}
           </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Link
-              href="#signin"
-              className="text-text-secondary hover:text-text-primary transition-colors duration-200"
-            >
-              Sign In
-            </Link>
-            <Button size="md">
+          {/* CTA Button */}
+          <div className="flex items-center gap-4">
+            <Button href="#discovery" className="hidden sm:inline-flex">
               Start Your Discovery
             </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors duration-200"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isMobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
+            
+            {/* Mobile Menu Button */}
+            <button className="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-border-light bg-white">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block px-3 py-2 text-text-secondary hover:text-text-primary transition-colors duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="pt-4 space-y-2">
-                <Link
-                  href="#signin"
-                  className="block px-3 py-2 text-text-secondary hover:text-text-primary transition-colors duration-200"
-                >
-                  Sign In
-                </Link>
-                <div className="px-3">
-                  <Button size="md" className="w-full">
-                    Start Your Discovery
-                  </Button>
-                </div>
-              </div>
-            </div>
+              </svg>
+            </button>
           </div>
-        )}
-      </div>
-    </nav>
+        </div>
+      </Container>
+    </motion.nav>
   )
 }
-
-export default Navigation
