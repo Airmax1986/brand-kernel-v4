@@ -9,100 +9,107 @@ const config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: "#1a73e8",
-          hover: "#185abc",
-          focus: "#174ea6",
+        // Brand Colors from Logo
+        brand: {
+          purple: "#B865D6",
+          coral: "#FF6B6B", 
+          teal: "#4ECDC4",
+          lime: "#95E1A3",
+          blue: "#5B7CFA",
+          pink: "#E8B4E3",
         },
+        // Background System
         background: {
-          DEFAULT: "#ffffff",
-          secondary: "#f8f9fa",
-          blue: "#f0f4fa",
-          "card-blue": "#f0f8fe",
+          DEFAULT: "#FFFFFF",
+          secondary: "#F8F9FA",
+          elevated: "#FFFFFF",
         },
+        // Surface System
+        surface: {
+          subtle: "#F8F9FA",
+        },
+        // Border System
         border: {
-          DEFAULT: "#dadce0",
-          active: "#078efb",
+          light: "#E5E7EB",
+          medium: "#D1D5DB",
+          DEFAULT: "#E5E7EB",
         },
+        // Text System
         text: {
-          primary: "#000000",
-          secondary: "#5f6368",
-          link: "#1967d2",
-          "link-hover": "#174ea6",
+          primary: "#111827",
+          secondary: "#6B7280", 
+          tertiary: "#9CA3AF",
+          accent: "#5B7CFA",
         },
-      },
-      backgroundImage: {
-        "gradient-button": "linear-gradient(90deg, #078efb 0%, #ac87eb 66.7%)",
-        "gradient-text": "linear-gradient(90deg, #078efb 0%, #ac87eb 66.7%)",
       },
       fontFamily: {
-        sans: ["Brand Kernel", "Roboto", "Arial", "Helvetica", "sans-serif"],
+        sans: ["Inter Variable", "Inter", "system-ui", "sans-serif"],
+        display: ["Inter Variable", "Inter", "system-ui", "sans-serif"],
       },
       fontSize: {
-        display: ["88px", { lineHeight: "0.9", fontWeight: "700" }],
-        "display-mobile": ["40px", { lineHeight: "0.9", fontWeight: "700" }],
-        "headline-1": ["56px", { lineHeight: "1.4", fontWeight: "700" }],
-        "headline-2": ["48px", { lineHeight: "1.4", fontWeight: "700" }],
-        "headline-3": ["40px", { lineHeight: "1.4", fontWeight: "700" }],
-        body: ["20px", { lineHeight: "1.5", fontWeight: "400" }],
-        "body-small": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
-        caption: ["14px", { lineHeight: "1.4", fontWeight: "400" }],
+        // Clean Typography Scale
+        "display": ["72px", { lineHeight: "80px", fontWeight: "700", letterSpacing: "-0.02em" }],
+        "display-mobile": ["36px", { lineHeight: "40px", fontWeight: "700", letterSpacing: "-0.02em" }],
+        "h1": ["48px", { lineHeight: "52px", fontWeight: "600", letterSpacing: "-0.01em" }],
+        "h2": ["36px", { lineHeight: "40px", fontWeight: "600", letterSpacing: "-0.01em" }],
+        "h3": ["24px", { lineHeight: "28px", fontWeight: "600" }],
+        "body-large": ["20px", { lineHeight: "30px", fontWeight: "400" }],
+        "body": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+        "body-small": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+        "button": ["16px", { lineHeight: "20px", fontWeight: "500" }],
+        "caption": ["12px", { lineHeight: "16px", fontWeight: "400", letterSpacing: "0.02em" }],
       },
       spacing: {
-        "grid-padding": "20px",
-        "section-gap": "40px",
-        "large-spacing": "80px",
-        "medium-spacing": "40px",
-        "small-spacing": "20px",
-        "card-padding": "24px",
-        "header-height": "74px",
+        "section": "80px",
+        "container": "20px",
+        "card": "24px",
+        "element": "16px",
       },
       borderRadius: {
-        button: "48px",
-        card: "24px",
-        "card-large": "32px",
-        small: "8px",
-        full: "50%",
-        "60": "60px",
+        "button": "8px",
+        "card": "16px", 
+        "input": "8px",
+        "geometric": "4px",
       },
       boxShadow: {
-        button: "0 1px 4px #3c404340",
-        card: "0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f",
+        "button": "0 2px 8px rgba(91, 124, 250, 0.2)",
+        "button-hover": "0 4px 12px rgba(91, 124, 250, 0.3)",
+        "card": "0 1px 3px rgba(0, 0, 0, 0.1)",
+        "card-hover": "0 4px 12px rgba(0, 0, 0, 0.1)",
+        "subtle": "0 1px 2px rgba(0, 0, 0, 0.05)",
       },
       maxWidth: {
-        container: "1248px",
-      },
-      screens: {
-        xs: "480px",
-        sm: "600px",
-        md: "768px",
-        lg: "1025px",
-        xl: "1350px",
-      },
-      zIndex: {
-        header: "100",
-      },
-      aspectRatio: {
-        "video": "16/9",
-        "square": "1/1",
+        "container": "1200px",
+        "narrow": "600px",
+        "wide": "1400px",
       },
       animation: {
-        "fade-in": "fadeIn 0.5s ease-in-out",
-        "slide-up": "slideUp 0.5s ease-out",
-        "gradient-shift": "gradientShift 3s ease-in-out infinite",
+        "fade-up": "fadeUp 0.6s ease-out",
+        "fade-in": "fadeIn 0.4s ease-out",
+        "geometric-float": "geometricFloat 3s ease-in-out infinite",
+        "slide-in-left": "slideInLeft 0.5s ease-out",
+        "slide-in-right": "slideInRight 0.5s ease-out",
       },
       keyframes: {
+        fadeUp: {
+          "0%": { transform: "translateY(20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
-        slideUp: {
-          "0%": { transform: "translateY(20px)", opacity: "0" },
-          "100%": { transform: "translateY(0)", opacity: "1" },
+        geometricFloat: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
         },
-        gradientShift: {
-          "0%, 100%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
+        slideInLeft: {
+          "0%": { transform: "translateX(-20px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        slideInRight: {
+          "0%": { transform: "translateX(20px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
         },
       },
     },
