@@ -1,0 +1,3 @@
+# These old layout files need to be removed to avoid conflicts
+# The new sections are already in app/components/sections/
+# This folder should be empty
