@@ -1,137 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
-:root {
-  /* Brand Colors */
-  --brand-purple: #B865D6;
-  --brand-coral: #FF6B6B;
-  --brand-teal: #4ECDC4;
-  --brand-lime: #95E1A3;
-  --brand-blue: #5B7CFA;
-  --brand-pink: #E8B4E3;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   
-  /* Background System */
-  --background-primary: #FFFFFF;
-  --background-secondary: #F8F9FA;
-  --background-elevated: #FFFFFF;
-  
-  /* Surface System */
-  --surface-subtle: #F8F9FA;
-  
-  /* Border System */
-  --border-light: #E5E7EB;
-  --border-medium: #D1D5DB;
-  
-  /* Text System */
-  --text-primary: #111827;
-  --text-secondary: #6B7280;
-  --text-tertiary: #9CA3AF;
-  --text-accent: #5B7CFA;
+  body {
+    @apply font-sans text-text-primary bg-background antialiased;
+  }
+
+  /* Focus styles */
+  .focus-visible {
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2;
+  }
+
+  /* Selection styles */
+  ::selection {
+    @apply bg-brand-blue/20 text-text-primary;
+  }
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@layer components {
+  /* Container utility class */
+  .container {
+    @apply px-container max-w-container mx-auto;
+  }
+
+  /* Clean button base */
+  .btn-base {
+    @apply inline-flex items-center justify-center rounded-button font-medium transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Geometric animations */
+  .animate-geometric-float {
+    animation: geometricFloat 3s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer utilities {
+  /* Backdrop blur for glass effect */
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
+
+  /* Safe area utilities for mobile */
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Gradient text utility */
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent;
+  }
+
+  /* Custom scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme(colors.border.light) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme(colors.border.light);
+    border-radius: 2px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: theme(colors.border.medium);
+  }
 }
 
-body {
-  font-family: var(--font-inter), system-ui, sans-serif;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Custom animations keyframes */
+@keyframes geometricFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-/* Focus states */
-:focus-visible {
-  outline: 2px solid var(--brand-blue);
-  outline-offset: 2px;
+@keyframes fadeUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-/* Selection */
-::selection {
-  background-color: var(--brand-blue);
-  color: white;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-::-webkit-scrollbar-track {
-  background: var(--surface-subtle);
+@keyframes slideInRight {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--border-medium);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-tertiary);
-}
-
-/* Utility classes */
-.container-padding {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.section-spacing {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
-/* Animation performance */
-.animate-geometric-float,
-.animate-fade-up,
-.animate-fade-in,
-.animate-slide-in-left,
-.animate-slide-in-right {
-  will-change: transform, opacity;
-}
-
-/* Reduced motion */
+/* Smooth transitions for reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-  
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* Dark mode support (future-proofing) */
-@media (prefers-color-scheme: dark) {
-  /* Keep light theme for now, but ready for dark mode */
 }
 
 /* Print styles */
 @media print {
   * {
-    background: transparent !important;
-    color: black !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
+    @apply text-black bg-white;
   }
   
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-  
-  @page {
-    margin: 0.5in;
+  .no-print {
+    display: none !important;
   }
 }
