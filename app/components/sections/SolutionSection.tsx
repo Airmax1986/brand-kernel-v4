@@ -2,7 +2,8 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Container, Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui"
+import { Container } from "@/components/ui"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card"
 import GeometricBlock from "@/components/brand/GeometricBlock"
 
 export function SolutionSection() {
