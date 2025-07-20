@@ -5,45 +5,11 @@ import Button from "@/components/ui/Button"
 import Input from "@/components/ui/Input"
 import GeometricLogo from "@/components/brand/GeometricLogo"
 import GeometricBlock from "@/components/brand/GeometricBlock"
-import { cn } from "@/lib/utils"
+import { FOOTER_LINKS, SOCIAL_LINKS } from "@/lib/constants"
 import { useState } from "react"
 
 const Footer = () => {
   const [newsletterEmail, setNewsletterEmail] = useState("")
-
-  const footerLinks = {
-    product: [
-      { name: "The Approach", href: "#approach" },
-      { name: "The Product", href: "#product" },
-      { name: "Pricing", href: "#pricing" },
-      { name: "Demo", href: "#demo" },
-    ],
-    company: [
-      { name: "About", href: "#about" },
-      { name: "Blog", href: "#blog" },
-      { name: "Careers", href: "#careers" },
-      { name: "Contact", href: "#contact" },
-    ],
-    resources: [
-      { name: "Documentation", href: "#docs" },
-      { name: "Help Center", href: "#help" },
-      { name: "Community", href: "#community" },
-      { name: "Brand Guidelines", href: "#brand" },
-    ],
-    legal: [
-      { name: "Privacy Policy", href: "#privacy" },
-      { name: "Terms of Service", href: "#terms" },
-      { name: "Cookie Policy", href: "#cookies" },
-      { name: "GDPR", href: "#gdpr" },
-    ],
-  }
-
-  const socialLinks = [
-    { name: "Twitter", href: "#", icon: "🐦" },
-    { name: "LinkedIn", href: "#", icon: "💼" },
-    { name: "GitHub", href: "#", icon: "💻" },
-    { name: "YouTube", href: "#", icon: "📺" },
-  ]
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -106,7 +72,7 @@ const Footer = () => {
                   Follow Us
                 </h4>
                 <div className="flex gap-4">
-                  {socialLinks.map((social, index) => (
+                  {SOCIAL_LINKS.map((social, index) => (
                     <Link
                       key={social.name}
                       href={social.href}
@@ -130,7 +96,7 @@ const Footer = () => {
                 Product
               </h4>
               <ul className="space-y-3">
-                {footerLinks.product.map((link) => (
+                {FOOTER_LINKS.product.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
@@ -149,7 +115,7 @@ const Footer = () => {
                 Company
               </h4>
               <ul className="space-y-3">
-                {footerLinks.company.map((link) => (
+                {FOOTER_LINKS.company.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
@@ -168,7 +134,7 @@ const Footer = () => {
                 Resources
               </h4>
               <ul className="space-y-3">
-                {footerLinks.resources.map((link) => (
+                {FOOTER_LINKS.resources.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
@@ -198,7 +164,7 @@ const Footer = () => {
             </div>
             
             <div className="flex gap-6">
-              {footerLinks.legal.map((link) => (
+              {FOOTER_LINKS.legal.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
