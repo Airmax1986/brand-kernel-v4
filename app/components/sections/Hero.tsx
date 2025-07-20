@@ -1,10 +1,12 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import Button from "@/components/ui/Button"
+import { Button } from "@/components/ui"
 import Badge from "@/components/ui/Badge"
 import GeometricBlock from "@/components/brand/GeometricBlock"
 import { cn } from "@/lib/utils"
+
+type BrandColor = "purple" | "coral" | "teal" | "lime" | "blue" | "pink"
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -12,6 +14,8 @@ const Hero = () => {
   useEffect(() => {
     setIsVisible(true)
   }, [])
+
+  const colors: BrandColor[] = ["purple", "coral", "teal", "lime", "blue"]
 
   return (
     <section className="relative min-h-screen flex items-center bg-white overflow-hidden pt-16">
@@ -79,13 +83,13 @@ const Hero = () => {
             {/* Social Proof */}
             <div className="flex items-center gap-4 pt-8">
               <div className="flex -space-x-2">
-                {[...Array(5)].map((_, i) => (
+                {colors.map((color, i) => (
                   <div
                     key={i}
                     className="w-10 h-10 rounded-full bg-surface-subtle border-2 border-white flex items-center justify-center"
                   >
                     <GeometricBlock 
-                      color={["purple", "coral", "teal", "lime", "blue"][i] as any} 
+                      color={color} 
                       size="sm" 
                     />
                   </div>
