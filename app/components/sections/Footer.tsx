@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import Button from "@/components/ui/Button"
+import { Button } from "@/components/ui"
 import Input from "@/components/ui/Input"
 import GeometricLogo from "@/components/brand/GeometricLogo"
 import GeometricBlock from "@/components/brand/GeometricBlock"
@@ -80,7 +80,7 @@ const Footer = () => {
                     >
                       <span className="text-xl">{social.icon}</span>
                       <GeometricBlock 
-                        color={["purple", "coral", "teal", "blue"][index] as any} 
+                        color={["purple", "coral", "teal", "blue"][index] as "purple" | "coral" | "teal" | "blue"} 
                         size="sm" 
                       />
                     </Link>
@@ -96,13 +96,13 @@ const Footer = () => {
                 Product
               </h4>
               <ul className="space-y-3">
-                {FOOTER_LINKS.product.map((link) => (
-                  <li key={link.name}>
+                {FOOTER_LINKS.company.map((link) => (
+                  <li key={link.label}>
                     <Link
                       href={link.href}
                       className="text-body-small text-text-secondary hover:text-text-primary transition-colors duration-200"
                     >
-                      {link.name}
+                      {link.label}
                     </Link>
                   </li>
                 ))}
@@ -112,16 +112,16 @@ const Footer = () => {
             <div>
               <h4 className="text-body font-semibold text-text-primary mb-6 flex items-center gap-2">
                 <GeometricBlock color="teal" size="sm" />
-                Company
+                Support
               </h4>
               <ul className="space-y-3">
-                {FOOTER_LINKS.company.map((link) => (
-                  <li key={link.name}>
+                {FOOTER_LINKS.support.map((link) => (
+                  <li key={link.label}>
                     <Link
                       href={link.href}
                       className="text-body-small text-text-secondary hover:text-text-primary transition-colors duration-200"
                     >
-                      {link.name}
+                      {link.label}
                     </Link>
                   </li>
                 ))}
@@ -131,16 +131,16 @@ const Footer = () => {
             <div>
               <h4 className="text-body font-semibold text-text-primary mb-6 flex items-center gap-2">
                 <GeometricBlock color="coral" size="sm" />
-                Resources
+                Legal
               </h4>
               <ul className="space-y-3">
-                {FOOTER_LINKS.resources.map((link) => (
-                  <li key={link.name}>
+                {FOOTER_LINKS.company.map((link) => (
+                  <li key={link.label}>
                     <Link
                       href={link.href}
                       className="text-body-small text-text-secondary hover:text-text-primary transition-colors duration-200"
                     >
-                      {link.name}
+                      {link.label}
                     </Link>
                   </li>
                 ))}
@@ -164,13 +164,13 @@ const Footer = () => {
             </div>
             
             <div className="flex gap-6">
-              {FOOTER_LINKS.legal.map((link) => (
+              {FOOTER_LINKS.company.map((link) => (
                 <Link
-                  key={link.name}
+                  key={link.label}
                   href={link.href}
                   className="text-body-small text-text-secondary hover:text-text-primary transition-colors duration-200"
                 >
-                  {link.name}
+                  {link.label}
                 </Link>
               ))}
             </div>
