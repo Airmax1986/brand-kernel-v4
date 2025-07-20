@@ -3,7 +3,7 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Container } from "@/components/ui"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/app/components/ui/Card"
 import GeometricBlock from "@/components/brand/GeometricBlock"
 
 export function SolutionSection() {
