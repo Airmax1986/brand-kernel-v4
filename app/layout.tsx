@@ -1,65 +1,39 @@
 import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 import "./globals.css"
 
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+})
+
 export const metadata: Metadata = {
-  title: "Meet Brand Kernel v4 - Your AI assistant",
-  description: "Brand Kernel v4 is our most advanced AI assistant. It can help with writing, planning, learning, and more.",
-  keywords: ["AI", "Brand Kernel", "artificial intelligence", "assistant", "chatbot"],
-  authors: [{ name: "Brand Kernel" }],
-  creator: "Brand Kernel",
-  publisher: "Brand Kernel",
-  metadataBase: new URL('https://brand-kernel-v4.vercel.app'),
+  title: "BrandKernel.io - AI-Powered Brand Discovery Platform",
+  description: "The first AI dialogue platform for authentic personal branding. Transform strategic clarity into daily impact with our Brand Kernel Discovery and BrandFlows activation.",
+  keywords: ["brand strategy", "AI branding", "personal brand", "brand discovery", "content creation", "brand kernel"],
+  authors: [{ name: "BrandKernel.io" }],
+  creator: "BrandKernel.io",
+  publisher: "BrandKernel.io",
+  robots: "index, follow",
   openGraph: {
-    title: "Meet Brand Kernel v4 - Your AI assistant",
-    description: "Brand Kernel v4 is our most advanced AI assistant. It can help with writing, planning, learning, and more.",
-    url: "https://brand-kernel-v4.vercel.app",
-    siteName: "Brand Kernel v4",
-    images: [
-      {
-        url: "/images/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Brand Kernel v4 - Your AI assistant",
-      },
-    ],
-    locale: "en_US",
     type: "website",
+    locale: "en_US",
+    url: "https://brandkernel.io",
+    title: "BrandKernel.io - AI-Powered Brand Discovery Platform",
+    description: "The first AI dialogue platform for authentic personal branding. Transform strategic clarity into daily impact.",
+    siteName: "BrandKernel.io",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meet Brand Kernel v4 - Your AI assistant",
-    description: "Brand Kernel v4 is our most advanced AI assistant. It can help with writing, planning, learning, and more.",
-    images: ["/images/og-image.jpg"],
-    creator: "@brandkernel",
+    title: "BrandKernel.io - AI-Powered Brand Discovery Platform",
+    description: "The first AI dialogue platform for authentic personal branding. Transform strategic clarity into daily impact.",
+    creator: "@brandkernelio",
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  icons: {
-    icon: [
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: [
-      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#1a73e8" },
-    ],
-  },
-  manifest: "/site.webmanifest",
   viewport: {
     width: "device-width",
     initialScale: 1,
-    maximumScale: 5,
+    maximumScale: 1,
   },
 }
 
@@ -69,12 +43,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
-      <body className="antialiased">
+    <html lang="en" className={inter.variable}>
+      <body className={`${inter.className} antialiased bg-white text-text-primary`}>
         {children}
       </body>
     </html>
