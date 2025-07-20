@@ -70,3 +70,76 @@ export interface ButtonProps {
   onClick?: () => void
   disabled?: boolean
 }
+
+// Additional types for backward compatibility and missing types
+export type BrandColor = 'purple' | 'coral' | 'teal' | 'lime' | 'blue' | 'pink'
+
+export interface NavLink {
+  href: string
+  label: string
+}
+
+export interface SocialLink {
+  name: string
+  href: string
+  icon: string
+}
+
+export interface FooterLinkGroup {
+  [key: string]: Array<{
+    name: string
+    href: string
+  }>
+}
+
+// Animation types
+export interface AnimationDelays {
+  immediate: number
+  short: number
+  medium: number
+  long: number
+  extraLong: number
+}
+
+// Breakpoint types
+export interface Breakpoints {
+  sm: number
+  md: number
+  lg: number
+  xl: number
+  '2xl': number
+}
+
+// Site config types
+export interface SiteConfig {
+  name: string
+  description: string
+  url: string
+  ogImage: string
+  twitter: string
+}
+
+// Pricing config types
+export interface PricingConfig {
+  discovery: {
+    price: number
+    currency: string
+    features: number
+  }
+  flows: {
+    price: number
+    currency: string
+    billing: string
+    features: number
+  }
+}
+
+// Content config types
+export interface ContentConfig {
+  waitlistCount: number
+  founderExperience: string
+  heroStats: {
+    creators: string
+    userTypes: string[]
+  }
+}
