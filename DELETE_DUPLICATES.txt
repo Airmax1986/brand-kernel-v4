@@ -1,0 +1,5 @@
+This commit removes duplicate case-sensitive files:
+- Button.tsx (keeping button.tsx)
+- Card.tsx (keeping card.tsx)
+
+These duplicates were causing TypeScript compilation errors.
