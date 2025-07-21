@@ -44,7 +44,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-button text-body-small font-medium"
             >
-              🚀 <span>AI Dialogue Platform</span>
+              🚀 <span>The Future of Brand Strategy is Here</span>
             </motion.div>
 
             {/* Headlines */}
@@ -55,9 +55,9 @@ export function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="text-display-mobile lg:text-display text-text-primary leading-tight"
               >
-                Transform Strategic{" "}
+                Discover your{" "}
                 <span className="relative">
-                  Clarity
+                  Brand Kernel
                   <GeometricBlock 
                     color="blue" 
                     size="sm" 
@@ -73,9 +73,9 @@ export function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-display-mobile lg:text-display text-text-primary leading-tight"
               >
-                Into Daily{" "}
+                with{" "}
                 <span className="relative">
-                  Impact
+                  AI Dialogue
                   <GeometricBlock 
                     color="teal" 
                     size="sm" 
@@ -94,15 +94,29 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-body-large text-text-secondary max-w-xl leading-relaxed"
             >
-              The first AI dialogue platform for authentic personal branding. 
-              Bridge the gap between who you are strategically and how you show up daily.
+              The first AI dialogue platform for authentic personal branding. We're building the AI that has that conversation with you – the one that transforms strategic clarity into daily impact.
             </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <Button size="lg" className="text-button">
+                Start Your Brand Discovery
+              </Button>
+              <Button variant="secondary" size="lg" className="text-button">
+                Watch the Demo
+              </Button>
+            </motion.div>
 
             {/* Social Proof */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
               className="flex items-center gap-4"
             >
               {/* Avatar Stack */}
@@ -117,25 +131,10 @@ export function HeroSection() {
                 ))}
               </div>
               <div className="text-body-small text-text-secondary">
-                <span className="font-medium text-text-primary">Join 500+ creators</span>
+                <span className="font-medium text-text-primary">Join 500+ creators, consultants, and founders</span>
                 <br />
-                transforming their brand clarity
+                who are building brands with strategic clarity.
               </div>
-            </motion.div>
-
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <Button size="lg" className="text-button">
-                Start Your Brand Discovery
-              </Button>
-              <Button variant="secondary" size="lg" className="text-button">
-                Watch the Demo
-              </Button>
             </motion.div>
           </motion.div>
 
