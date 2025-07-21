@@ -29,6 +29,7 @@ const Button = React.forwardRef<
   href, 
   onClick,
   disabled = false,
+  type = "button",
   ...props 
 }, ref) => {
   const baseClasses = cn(
@@ -62,6 +63,7 @@ const Button = React.forwardRef<
       className={baseClasses}
       onClick={onClick}
       disabled={disabled}
+      type={type}
       {...props}
     >
       {children}
