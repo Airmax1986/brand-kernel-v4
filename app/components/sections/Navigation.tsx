@@ -21,6 +21,7 @@ export function Navigation() {
     { label: "The Approach", href: "#approach" },
     { label: "The Product", href: "#product" },
     { label: "Pricing", href: "#pricing" },
+    { label: "Blog", href: "#blog" },
     { label: "About", href: "#about" },
   ]
 
@@ -68,8 +69,15 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <div className="flex items-center gap-4">
+            <motion.a
+              href="#signin"
+              className="hidden sm:inline-flex text-body text-text-secondary hover:text-text-primary transition-colors"
+              whileHover={{ y: -1 }}
+            >
+              Sign In
+            </motion.a>
             <Button href="#discovery" className="hidden sm:inline-flex">
               Start Your Discovery
             </Button>
