@@ -72,7 +72,7 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="sm:w-auto">
+              <Button variant="high-emphasis" size="lg" className="sm:w-auto">
                 Start Your Brand Discovery
               </Button>
               <Button variant="medium-emphasis" size="lg" className="sm:w-auto">
