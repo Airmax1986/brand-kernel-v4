@@ -60,7 +60,7 @@ const Footer = () => {
                     className="flex-1"
                     required
                   />
-                  <Button type="submit" variant="outline">
+                  <Button type="submit" variant="medium-emphasis">
                     Subscribe
                   </Button>
                 </form>
