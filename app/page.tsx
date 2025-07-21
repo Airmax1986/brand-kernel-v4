@@ -3,7 +3,7 @@ import { HeroSection } from "./components/sections/HeroSection"
 import { ProblemSection } from "./components/sections/ProblemSection"
 import { SolutionSection } from "./components/sections/SolutionSection"
 import { ChoosePlanSection } from "./components/sections/ChoosePlanSection"
-import { FounderSection } from "./components/sections/FounderSection"
+import Founder from "./components/sections/Founder"
 import Footer from "./components/sections/Footer"
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
         <ProblemSection />
         <SolutionSection />
         <ChoosePlanSection />
-        <FounderSection />
+        <Founder />
         <Footer />
       </div>
     </main>
