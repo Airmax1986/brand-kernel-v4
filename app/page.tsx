@@ -3,6 +3,8 @@ import { HeroSection } from "./components/sections/HeroSection"
 import { ProblemSection } from "./components/sections/ProblemSection"
 import { SolutionSection } from "./components/sections/SolutionSection"
 import { ChoosePlanSection } from "./components/sections/ChoosePlanSection"
+import { FounderSection } from "./components/sections/FounderSection"
+import Footer from "./components/sections/Footer"
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
         <ProblemSection />
         <SolutionSection />
         <ChoosePlanSection />
+        <FounderSection />
+        <Footer />
       </div>
     </main>
   )
