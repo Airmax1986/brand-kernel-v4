@@ -75,7 +75,7 @@ const Hero = () => {
               <Button size="lg" className="sm:w-auto">
                 Start Your Brand Discovery
               </Button>
-              <Button variant="secondary" size="lg" className="sm:w-auto">
+              <Button variant="medium-emphasis" size="lg" className="sm:w-auto">
                 Watch the Demo
               </Button>
             </div>
