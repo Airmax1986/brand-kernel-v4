@@ -1,5 +1,5 @@
 export { Button } from "./button"
-export { Card, CardHeader, CardContent, CardFooter } from "./card"
+export { Card, CardHeader, CardContent, CardFooter, CardTitle, CardDescription } from "./card"
 export { Container } from "./container"
 export { GradientText } from "./gradient-text"
 export { VideoIcon } from "./video-icon"
