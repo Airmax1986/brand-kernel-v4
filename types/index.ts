@@ -69,6 +69,7 @@ export interface ButtonProps {
   href?: string
   onClick?: () => void
   disabled?: boolean
+  type?: 'button' | 'submit' | 'reset'
 }
 
 // Additional types for backward compatibility and missing types
